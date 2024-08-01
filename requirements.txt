@@ -74,7 +74,6 @@ PyQt5==5.15.6
 PyQt5-sip==12.9.1
 pyRFC3339==1.1
 pysqlite3==0.5.3
-python-apt==2.4.0+ubuntu3
 python-dateutil==2.9.0.post0
 python-debian==0.1.43+ubuntu1.1
 pytz==2022.1
