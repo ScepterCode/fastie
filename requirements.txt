@@ -16,8 +16,6 @@ decorator==5.1.1
 distro==1.7.0
 Django==5.0.1
 djangorestframework==3.14.0
-djangorestframework-simplejwt==5.3.1
-duplicity==0.8.21
 exceptiongroup==1.2.2
 executing==2.0.1
 fasteners==0.14.1
