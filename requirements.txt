@@ -34,7 +34,6 @@ jupyter_client==8.6.2
 jupyter_core==5.7.2
 jupyterlab_widgets==3.0.11
 keyring==23.5.0
-language-selector==0.1
 launchpadlib==1.10.16
 lazr.restfulclient==0.14.4
 lazr.uri==1.0.6
