@@ -14,7 +14,6 @@ dbus-python==1.2.18
 debugpy==1.8.2
 decorator==5.1.1
 distro==1.7.0
-distro-info==1.1+ubuntu0.2
 Django==5.0.1
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
