@@ -4,7 +4,7 @@ from accounts.models import User
 class ArtisanProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    skills = models.ManyToManyField('Skill')
+    skills = models.ManyToManyField('Skill', blank=True)
     location = models.ForeignKey('Location', on_delete=models.SET_NULL, null=True)
     is_available = models.BooleanField(default=True)
 
