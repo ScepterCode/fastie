@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, status
 from .models import ArtisanProfile, ClientProfile
-from .serializers import ArtisanProfileSerializer, ClientProfileSerializer
+from .serializers import ArtisanProfileSerializer, ClientProfileSerializer, ArtisanDetailSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import ArtisanProfile, Skill, Location 
+from rest_framework.permissions import IsAuthenticated
 
 class ArtisanProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = ArtisanProfileSerializer
@@ -52,3 +53,15 @@ class ToggleAvailabilityView(APIView):
         artisan_profile.is_available = not artisan_profile.is_available
         artisan_profile.save()
         return Response({'is_available': artisan_profile.is_available})
+
+
+class ArtisanDetailView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, artisan_id):
+        try:
+            artisan = ArtisanProfile.objects.get(id=artisan_id)
+            serializer = ArtisanDetailSerializer(artisan)
+            return Response(serializer.data)
+        except ArtisanProfile.DoesNotExist:
+            return Response({"error": "Artisan not found"}, status=status.HTTP_404_NOT_FOUND)
