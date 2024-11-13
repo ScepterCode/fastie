@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'profiles',
     'chat',
     'booking',
+    'job_progress',
 
 
 ]

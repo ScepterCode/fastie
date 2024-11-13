@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/profiles/', include('profiles.urls')),
     path('api/chat/', include('chat.urls')),
     path('api/booking/', include('booking.urls')),
+    path('api/job_progress/', include('job_progress.urls')),
     # Redirect root URL to admin for now
     path('', RedirectView.as_view(url='/admin/', permanent=False)),
 ]
